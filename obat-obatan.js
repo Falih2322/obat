@@ -13,12 +13,21 @@ const obatList = [
 ];
 
 // Menampilkan daftar obat beserta kegunaan dan harga
-console.log("Daftar Obat yang Sering Digunakan di Indonesia:");
-console.log("=".repeat(50));
+function tampilkanDaftarObat() {
+    let daftarObatHTML = "<h2>Daftar Obat yang Sering Digunakan di Indonesia</h2>";
+    daftarObatHTML += "<ul>";
 
-obatList.forEach((obat, index) => {
-    console.log(`${index + 1}. ${obat.obat}`);
-    console.log(`   Kegunaan: ${obat.kegunaan}`);
-    console.log(`   Perkiraan Harga: ${obat.harga}`);
-    console.log("=".repeat(50));
-});
+    obatList.forEach((obat, index) => {
+        daftarObatHTML += `
+            <li>
+                <strong>${index + 1}. ${obat.obat}</strong><br>
+                <em>Kegunaan:</em> ${obat.kegunaan}<br>
+                <em>Perkiraan Harga:</em> ${obat.harga}
+            </li>
+            <hr>
+        `;
+    });
+
+    daftarObatHTML += "</ul>";
+    document.getElementById("obatListContainer").innerHTML = daftarObatHTML;
+}
