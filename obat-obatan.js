@@ -11,23 +11,3 @@ const obatList = [
     { obat: "Metformin", kegunaan: "Obat untuk mengatur kadar gula darah pada pasien diabetes tipe 2.", harga: "Rp 10.000 - Rp 40.000" },
     { obat: "Loperamide", kegunaan: "Obat untuk mengobati diare dengan mengurangi pergerakan usus.", harga: "Rp 5.000 - Rp 15.000" }
 ];
-
-// Menampilkan daftar obat beserta kegunaan dan harga
-function tampilkanDaftarObat() {
-    let daftarObatHTML = "<h2>Daftar Obat yang Sering Digunakan di Indonesia</h2>";
-    daftarObatHTML += "<ul>";
-
-    obatList.forEach((obat, index) => {
-        daftarObatHTML += `
-            <li>
-                <strong>${index + 1}. ${obat.obat}</strong><br>
-                <em>Kegunaan:</em> ${obat.kegunaan}<br>
-                <em>Perkiraan Harga:</em> ${obat.harga}
-            </li>
-            <hr>
-        `;
-    });
-
-    daftarObatHTML += "</ul>";
-    document.getElementById("obatListContainer").innerHTML = daftarObatHTML;
-}
